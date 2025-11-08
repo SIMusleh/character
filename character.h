@@ -23,4 +23,25 @@
         int speed;
         int endurance;
         int faith;
+
+public:
+    Character(std::string name, double hp, double mp, int strength, int dexterity, int intelligence, int speed, int endurance, int faith);
+
+    virtual ~Character() {}
+
+    //Getters
+    std::string getName() const;
+    double getHP() const;
+    double getMP() const;
+    int getStrength() const;
+    int getDexterity() const;
+    int getIntelligence () const;
+    int getSpeed() const;
+    int getEndurance() const;
+    int getFaith() const;
+
+    //Setters
+    void setHP(double hp);
+    void setMP(double mp);
+    
  }
