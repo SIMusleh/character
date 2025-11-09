@@ -44,4 +44,17 @@ public:
     void setHP(double hp);
     void setMP(double mp);
     
+    //Basic attack
+    virtual void basicAttack (Character&target);
+
+    //Tostring
+    virtual std::string tostring() const;
+
+    //Fighter class
+    class Fighter : public Character {
+        public:
+            Fighter(std::string name);
+            std::string toString() const override;
+    };
+    
  }
