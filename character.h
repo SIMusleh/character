@@ -4,85 +4,85 @@
  * Purpose: Define RPG character types using shared traits and labels
  */
 
- #ifndef CHARACTER_H
- #define CHARACTER_H
+ 
+#ifndef CHARACTER_H
+#define CHARACTER_H
 
- #include <string>
+#include <string>
 
-//Enum for character class types
- enum CharacterClass { FIGHTER, ROGUE, MAGICIAN, CLERIC };
+// Enum for character class types
+enum CharacterClass { FIGHTER, ROGUE, MAGICIAN, CLERIC };
 
- class Character {
-    protected:
-        std::string name;
-        double hp;
-        double mp;
-        int strength;
-        int dexterity;
-        int intelligence;
-        int speed;
-        int endurance;
-        int faith;
+class Character {
+protected:
+    std::string name;
+    double hp;
+    double mp;
+    int strength;
+    int dexterity;
+    int intelligence;
+    int speed;
+    int endurance;
+    int faith;
 
 public:
-    Character(std::string name, double hp, double mp, int strength, int dexterity, int intelligence, int speed, int endurance, int faith);
+    Character(std::string name, double hp, double mp, int strength, int dexterity,
+              int intelligence, int speed, int endurance, int faith);
 
     virtual ~Character() {}
 
-    //Getters
+    // Getters
     std::string getName() const;
     double getHP() const;
     double getMP() const;
     int getStrength() const;
     int getDexterity() const;
-    int getIntelligence () const;
+    int getIntelligence() const;
     int getSpeed() const;
     int getEndurance() const;
     int getFaith() const;
 
-    //Setters
+    // Setters
     void setHP(double hp);
     void setMP(double mp);
-    
-    //Basic attack
-    virtual void basicAttack (Character&target);
 
-    //Tostring
-    virtual std::string tostring() const;
+    // Basic attack
+    virtual void basicAttack(Character& target);
 
-    //Fighter class
-    class Fighter : public Character {
-    public:
-        Fighter(std::string name);
-        std::string toString() const override;
-        void strongAttack(Character&target);
-        std::string toString() const override;
-    };
+    // ToString
+    virtual std::string toString() const;
+};
 
-    //Rogue class
-    class Rogue : public Character {
-    public:
-        Rogue(std::string name);
-        void steal(Character&target);
-        std::string toString() const override;
-    };
+// Fighter class
+class Fighter : public Character {
+public:
+    Fighter(std::string name);
+    void strongAttack(Character& target);
+    std::string toString() const override;
+};
 
-    //Magician class
-    class Magician : public Character {
-    public:
-        Magician(std::string name);
-        void cast(Character&target);
-        std::string toString() const override;
-    };
+// Rogue class
+class Rogue : public Character {
+public:
+    Rogue(std::string name);
+    void steal(Character& target);
+    std::string toString() const override;
+};
 
-    //Cleric class
-    class Cleric : public Character {
-    public:
-        Cleric(std::string name);
-        void heal(Character&ally);
-        std::string toString() const override;
-    };
+// Magician class
+class Magician : public Character {
+public:
+    Magician(std::string name);
+    void cast(Character& target);
+    std::string toString() const override;
+};
 
-    #endif
- }
+// Cleric class
+class Cleric : public Character {
+public:
+    Cleric(std::string name);
+    void heal(Character& ally);
+    std::string toString() const override;
+};
 
+#endif
