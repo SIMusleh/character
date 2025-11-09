@@ -74,5 +74,15 @@ public:
         void cast(Character&target);
         std::string toString() const override;
     };
+
+    //Cleric class
+    class Cleric : public Character {
+    public:
+        Cleric(std::string name);
+        void heal(Character&ally);
+        std::string toString() const override;
+    };
+
+    #endif
  }
 
