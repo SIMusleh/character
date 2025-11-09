@@ -48,3 +48,18 @@ std::string Character::toString() const {
         << "Faith: " << faith << "\n";
     return out.str();
 }
+
+//Fighter
+
+Fighter::Fighter(std::string name)
+    :Character(name, 300, 0, 16, 10, 5, 8, 15, 5) {}
+
+void Fighter::strongAttack(Character& target) {
+    double damage = strength + endurance;
+    target.setHP(target.getHP() - damage);
+}
+
+std::string Fighter::toString() const {
+    return Character::toString();
+}
+
