@@ -4,7 +4,6 @@
  * Purpose: Define RPG character types using shared traits and labels
  */
 
- 
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
