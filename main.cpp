@@ -10,23 +10,38 @@
 int main() {
     std::string fighterName, rogueName, magicianName, clericName;
 
-    std::cout << "What is your fighter's name: ";
+    std::cout << "What is your fighter's name: \n";
     std::getline(std::cin, fighterName);
     Fighter fighter(fighterName);
 
-    std::cout << "What is your rogue's name: ";
+    std::cout << "What is your rogue's name: \n";
     std::getline(std::cin, rogueName);
     Rogue rogue(rogueName);
 
-    std::cout << "What is your magician's name: ";
+    std::cout << "What is your magician's name: \n";
     std::getline(std::cin, magicianName);
     Magician magician(magicianName);
 
-    std::cout << "What is your cleric's name: ";
+    std::cout << "What is your cleric's name: \n";
     std::getline(std::cin, clericName);
     Cleric cleric(clericName);
 
-// Rogue steals from Fighter
+    std::cout << "\nTesting\n";
+
+    // Fighter attacks Rogue
+    std::cout << "Fighter Starting Stats\n";
+    std::cout << fighter.toString() << "\n";
+
+    std::cout << "Rogue Starting Stats\n";
+    std::cout << rogue.toString() << "\n";
+
+    std::cout << fighter.getName() << " Strong Attack " << rogue.getName() << "\n";
+    fighter.strongAttack(rogue);
+
+    std::cout << "Updated Rogue Stats\n";
+    std::cout << rogue.toString() << "\n";
+
+    // Rogue steals from Fighter
     std::cout << rogue.getName() << " Steal " << fighter.getName() << "\n";
     rogue.steal(fighter);
 
@@ -36,7 +51,7 @@ int main() {
     std::cout << "Updated Fighter Stats\n";
     std::cout << fighter.toString() << "\n";
 
-// Magician casts on Rogue
+    // Magician casts on Rogue
     std::cout << "\nMagician Starting Stats\n";
     std::cout << magician.toString() << "\n";
 
@@ -49,7 +64,7 @@ int main() {
     std::cout << "Updated Rogue Stats\n";
     std::cout << rogue.toString() << "\n";
 
-// Cleric heals Rogue
+    // Cleric heals Rogue
     std::cout << "\nStarting Cleric Stats\n";
     std::cout << cleric.toString() << "\n";
 
