@@ -12,10 +12,10 @@
 
  //Character base class
 
-Character::Character(std::string name, double hp, double mp, int strength, int dexterity, 
+Character::Character(std::string name, double hp, double mp, int strength, int dexterity,
     int intelligence, int speed, int endurance, int faith)
     : name(name), hp(hp), mp(mp), strength(strength), dexterity(dexterity),
-intelligence(intelligence), speed(speed), endurance(endurance), faith(faith) {}
+      intelligence(intelligence), speed(speed), endurance(endurance), faith(faith) {}
 
 std::string Character::getName() const { return name; }
 double Character::getHP() const { return hp; }
@@ -49,10 +49,10 @@ std::string Character::toString() const {
     return out.str();
 }
 
-//Fighter
+// Fighter
 
 Fighter::Fighter(std::string name)
-    :Character(name, 300, 0, 16, 10, 5, 8, 15, 5) {}
+    : Character(name, 300, 0, 16, 10, 5, 8, 15, 5) {}
 
 void Fighter::strongAttack(Character& target) {
     double damage = strength + endurance;
@@ -63,33 +63,33 @@ std::string Fighter::toString() const {
     return Character::toString();
 }
 
-//Rouge
+// Rogue
 
-Rouge::Rouge(std::string name)
+Rogue::Rogue(std::string name)
     : Character(name, 200, 0, 10, 16, 16, 15, 8, 5) {}
 
-void Rouge::steal(character&target) {
+void Rogue::steal(Character& target) {
     int totalStats = dexterity + speed + intelligence;
-    int percent = rand() % 41 + 10; //Random between 10 and 50
+    int percent = rand() % 41 + 10; // Random between 10 and 50
     double stealAmount = totalStats * (percent / 100.0);
 
     target.setHP(target.getHP() - stealAmount);
-        hp += stealAmount;
+    hp += stealAmount;
 }
 
-std::string Rouge::toString() const {
+std::string Rogue::toString() const {
     return Character::toString();
 }
 
-//Magician
+// Magician
 
 Magician::Magician(std::string name)
     : Character(name, 250, 200, 5, 10, 16, 16, 5, 8) {}
 
-void Magician::cast(Character&target) {
+void Magician::cast(Character& target) {
     double damage = intelligence + speed;
     if (mp >= damage) {
-target.setHP(target.getHP() - damage);
+        target.setHP(target.getHP() - damage);
         mp -= damage;
     }
 }
@@ -98,7 +98,7 @@ std::string Magician::toString() const {
     return Character::toString();
 }
 
-//Cleric
+// Cleric
 
 Cleric::Cleric(std::string name)
     : Character(name, 200, 200, 5, 10, 8, 16, 5, 16) {}
