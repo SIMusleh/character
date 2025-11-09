@@ -52,9 +52,27 @@ public:
 
     //Fighter class
     class Fighter : public Character {
-        public:
-            Fighter(std::string name);
-            std::string toString() const override;
+    public:
+        Fighter(std::string name);
+        std::string toString() const override;
+        void strongAttack(Character&target);
+        std::string toString() const override;
     };
-    
+
+    //Rogue class
+    class Rogue : public Character {
+    public:
+        Rogue(std::string name);
+        void steal(Character&target);
+        std::string toString() const override;
+    };
+
+    //Magician class
+    class Magician : public Character {
+    public:
+        Magician(std::string name);
+        void cast(Character&target);
+        std::string toString() const override;
+    };
  }
+
