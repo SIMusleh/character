@@ -35,3 +35,16 @@ int main() {
 
     std::cout << "Updated Fighter Stats\n";
     std::cout << fighter.toString() << "\n";
+
+// Magician casts on Rogue
+    std::cout << "\nMagician Starting Stats\n";
+    std::cout << magician.toString() << "\n";
+
+    std::cout << magician.getName() << " Cast " << rogue.getName() << "\n";
+    magician.cast(rogue);
+
+    std::cout << "Updated Magician Stats\n";
+    std::cout << magician.toString() << "\n";
+
+    std::cout << "Updated Rogue Stats\n";
+    std::cout << rogue.toString() << "\n";
