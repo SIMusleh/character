@@ -81,3 +81,20 @@ std::string Rouge::toString() const {
     return Character::toString();
 }
 
+//Magician
+
+Magician::Magician(std::string name)
+    : Character(name, 250, 200, 5, 10, 16, 16, 5, 8) {}
+
+void Magician::cast(Character&target) {
+    double damage = intelligence + speed;
+    if (mp >= damage) {
+target.setHP(target.getHP() - damage);
+        mp -= damage;
+    }
+}
+
+std::string Magician::toString() const {
+    return Character::toString();
+}
+
