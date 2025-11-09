@@ -48,3 +48,19 @@ int main() {
 
     std::cout << "Updated Rogue Stats\n";
     std::cout << rogue.toString() << "\n";
+
+// Cleric heals Rogue
+    std::cout << "\nStarting Cleric Stats\n";
+    std::cout << cleric.toString() << "\n";
+
+    std::cout << cleric.getName() << " Heal " << rogue.getName() << "\n";
+    cleric.heal(rogue);
+
+    std::cout << "Updated Cleric Stats\n";
+    std::cout << cleric.toString() << "\n";
+
+    std::cout << "Updated Rogue Stats\n";
+    std::cout << rogue.toString() << "\n";
+
+    return 0;
+}
