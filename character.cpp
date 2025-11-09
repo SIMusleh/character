@@ -98,3 +98,18 @@ std::string Magician::toString() const {
     return Character::toString();
 }
 
+//Cleric
+
+Cleric::Cleric(std::string name)
+    : Character(name, 200, 200, 5, 10, 8, 16, 5, 16) {}
+
+void Cleric::heal(Character& ally) {
+    if (mp >= faith) {
+        ally.setHP(ally.getHP() + faith);
+        mp -= faith;
+    }
+}
+
+std::string Cleric::toString() const {
+    return Character::toString();
+}
