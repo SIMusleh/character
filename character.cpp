@@ -63,3 +63,21 @@ std::string Fighter::toString() const {
     return Character::toString();
 }
 
+//Rouge
+
+Rouge::Rouge(std::string name)
+    : Character(name, 200, 0, 10, 16, 16, 15, 8, 5) {}
+
+void Rouge::steal(character&target) {
+    int totalStats = dexterity + speed + intelligence;
+    int percent = rand() % 41 + 10; //Random between 10 and 50
+    double stealAmount = totalStats * (percent / 100.0);
+
+    target.setHP(target.getHP() - stealAmount);
+        hp += stealAmount;
+}
+
+std::string Rouge::toString() const {
+    return Character::toString();
+}
+
